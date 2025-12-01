@@ -8,8 +8,6 @@ test('static dropdown',async({page})=>{
     await page.waitForTimeout(5000);
     expect(page.locator('#country')).toHaveValue('germany');
 
-    
-
    // await page.pause();
     
 
