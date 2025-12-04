@@ -11,6 +11,30 @@
 */
 
 /*
+| Input Type                | Role        |
+| ------------------------- | ----------- |
+| `<input type="text">`     | `textbox`   |
+| `<input type="email">`    | `textbox`   |
+| `<textarea>`              | `textbox`   |
+| `<input type="search">`   | `searchbox` |
+| `<input type="checkbox">` | `checkbox`  |
+| `<input type="radio">`    | `radio`     |
+| `<button>`                | `button`    |
+
+*/
+
+/*
+| Element Type                              | Assertion to Use | Why                                    |
+| ----------------------------------------- | ---------------- | -------------------------------------- |
+| `<h1>`, `<div>`, `<p>`, `<button>`, `<a>` | `toHaveText()`   | These display visible text             |
+| `<input>`, `<textarea>`                   | `toHaveValue()`  | Text is stored in the `value` property |
+| Error messages                            | `toHaveText()`   | They show visible text                 |
+| Dropdown `<select>`                       | `toHaveValue()`  | Selected option has a value            |
+| Checkbox/Radio                            | `toBeChecked()`  | They don’t have text/value             |
+
+*/
+
+/*
 1. page.getByRole() - getByRole is a role-based locator used in Playwright to find elements using ARIA roles
 
 Note : 
