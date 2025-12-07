@@ -22,11 +22,12 @@ test('Using button',async({page})=>{
     await page.goto('https://demo.nopcommerce.com/', { waitUntil: 'domcontentloaded' });
     await page.getByRole('link',{name:'Log in'}).click();
     // Wait for both fields to appear
-    await Promise.all([
-        page.waitForSelector('#Email',{ timeout: 60000 }),
-        page.waitForSelector('#Password',{ timeout: 60000 })
-    ]);
+   
+    const email = page.locator('#Email');
+    const password = page.locator('#Password');
 
+    await email.waitFor({ state: 'visible', timeout: 60000 });
+    await password.waitFor({ state: 'visible', timeout: 60000 });
 
     await page.getByRole('textbox',{name:'Email'}).fill('ningappa@gmail.com');
     await page.getByRole('textbox',{name:'Password'}).fill('nings@321');
