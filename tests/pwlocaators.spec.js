@@ -19,8 +19,15 @@ test('Using link',async({page})=>{
 test('Using button',async({page})=>{
 
 
-    await page.goto('https://demo.nopcommerce.com/');
+    await page.goto('https://demo.nopcommerce.com/', { waitUntil: 'domcontentloaded' });
     await page.getByRole('link',{name:'Log in'}).click();
+    // Wait for both fields to appear
+    await Promise.all([
+        page.waitForSelector('#Email'),
+        page.waitForSelector('#Password')
+    ]);
+
+
     await page.getByRole('textbox',{name:'Email'}).fill('ningappa@gmail.com');
     await page.getByRole('textbox',{name:'Password'}).fill('nings@321');
     await page.getByRole('button',{name:'Log in'}).click();
