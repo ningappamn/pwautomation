@@ -16,31 +16,24 @@ test('Using link',async({page})=>{
 
 // Example : 01 - getByRole () Using Button
 
-test('Using button',async({page})=>{
+test('Using button', async ({ page }) => {
+    // Use a non-blocked navigation strategy
+    await page.goto('https://demo.nopcommerce.com/', { waitUntil: 'networkidle' });
 
+    // Click Login
+    await page.getByRole('link', { name: 'Log in' }).click();
 
-    await page.goto('https://demo.nopcommerce.com/', { waitUntil: 'domcontentloaded' });
-    await page.getByRole('link',{name:'Log in'}).click();
-    // Wait for both fields to appear
-   
-    const email = page.locator('#Email');
-    const password = page.locator('#Password');
+    // Auto-wait for fields (no manual waitFor needed)
+    await page.getByLabel('Email:').fill('invalid@example.com');
+    await page.getByLabel('Password:').fill('wrongpassword');
 
-    await email.waitFor({ state: 'visible', timeout: 60000 });
-    await password.waitFor({ state: 'visible', timeout: 60000 });
+    await page.getByRole('button', { name: 'Log in' }).click();
 
-    await page.getByRole('textbox',{name:'Email'}).fill('ningappa@gmail.com');
-    await page.getByRole('textbox',{name:'Password'}).fill('nings@321');
-    await page.getByRole('button',{name:'Log in'}).click();
+    const errorMsg = page.getByText('Login was unsuccessful. Please correct the errors and try again No customer account found');
 
-    const errorMsg=page.getByText('No customer account found');
+    await expect(errorMsg).toBeVisible();
+});
 
-    //await page.waitForTimeout(5000);
-    await page.waitForLoadState();
-
-    await expect(errorMsg).toHaveText('No customer account found');
-
-})
 
 
 test('Using Heading',async({page})=>{
