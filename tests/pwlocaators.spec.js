@@ -21,8 +21,8 @@ test('Using button',async({page})=>{
 
     await page.goto('https://demo.nopcommerce.com/');
     await page.getByRole('link',{name:'Log in'}).click();
-    await page.getByRole('textbox',{name:'email'}).fill('ningappa@gmail.com');
-    await page.getByRole('textbox',{name:'password'}).fill('nings@321');
+    await page.getByRole('textbox',{name:'Email'}).fill('ningappa@gmail.com');
+    await page.getByRole('textbox',{name:'Password'}).fill('nings@321');
     await page.getByRole('button',{name:'Log in'}).click();
 
     const errorMsg=page.getByText('No customer account found');
