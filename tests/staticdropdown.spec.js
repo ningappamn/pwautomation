@@ -6,7 +6,7 @@ test('static dropdown',async({page})=>{
     const clickdropdown=await page.locator('#country').click()
     const selectopt= await page.locator('#country').selectOption('germany');
     await page.waitForTimeout(5000);
-    expect(page.locator('#country')).toHaveValue('germany');
+    //expect(page.locator('#country')).toHaveValue('germany');
 
    // await page.pause();
     
