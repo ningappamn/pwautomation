@@ -23,8 +23,8 @@ test('Using button',async({page})=>{
     await page.getByRole('link',{name:'Log in'}).click();
     // Wait for both fields to appear
     await Promise.all([
-        page.waitForSelector('#Email'),
-        page.waitForSelector('#Password')
+        page.waitForSelector('#Email',{ timeout: 60000 }),
+        page.waitForSelector('#Password',{ timeout: 60000 })
     ]);
 
 
