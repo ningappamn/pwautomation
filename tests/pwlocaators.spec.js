@@ -125,7 +125,7 @@ test('Using columnheader',async({page})=>{
 
 //Validate table using getByRole - combined with row,cell,columnheader 
 
-test.only('Validate table using getByRole', async ({ page }) => {
+test('Validate table using getByRole', async ({ page }) => {
   await page.goto('https://testautomationpractice.blogspot.com/');
 
   const staticTable = page.getByRole('table').filter({
