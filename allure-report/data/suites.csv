@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","26175","Add products","chromium","2025-12-09","passed","2025-12-09","","saucedemoLogin.spec.js","",""
+"","4259","static dropdown","chromium","2025-12-09","passed","2025-12-09","","staticdropdown.spec.js","",""
+"","777","After login validate url and title","chromium","2025-12-09","passed","2025-12-09","","saucedemoLogin.spec.js","",""
