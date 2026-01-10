@@ -24,6 +24,7 @@ test('mouse over on recharge and select options', async ({ page }) => {
 
     const allstates = await newpage.locator('._1exI ._3xI1 ul li span').allTextContents();
     console.log('states:',allstates);
+    
 
 
 })
