@@ -9,7 +9,7 @@ test('mouse over on recharge and select options', async ({ page }) => {
     await page.getByText('Recharge & Bills').hover();
 
     //take  screenshot
-    await page.screenshot({ path: 'paytm.png' });
+   // await page.screenshot({ path: 'paytm.png' });
 
     const [newpage] = await Promise.all([page.waitForEvent('popup'), page.getByRole('link', { name: 'Electricity bill', exact: true }).click()]);
 
