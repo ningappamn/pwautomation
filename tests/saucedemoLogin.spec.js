@@ -1,12 +1,7 @@
 
 import { test, expect } from '@playwright/test';
-import { login } from './login.helper';
-import { count } from 'node:console';
-
 
 test('After login validate url and title', async ({ page }) => {
-
-    await login(page);
 
     // Validate final URL after login
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
@@ -19,7 +14,6 @@ test('After login validate url and title', async ({ page }) => {
 test('Add products', async ({ page }) => {
 
     // Reuse the login helper function to log in before performing any actions
-    await login(page);
 
     // Collect all product names and store it in allPropducts
     const allPropducts = await page.locator('.inventory_item_name ').allTextContents();
