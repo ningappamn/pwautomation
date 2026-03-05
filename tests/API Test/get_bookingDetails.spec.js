@@ -35,10 +35,10 @@ test('Get booking details using path parameter', async ({ request }) => {
 test.only('Get booking details using query parameter', async ({ request }) => {
 
     //get booking details using query parameter (firstname and lastname) 
-    
+
     const firstname = 'ningappa';
     const lastname = 'ningagol';
-    
+
     // pass query parameter in the endpoint
     //const response = await request.get(`/booking?firstname=${firstname}&lastname=${lastname}`);  //one way to pass query parameter
     const response = await request.get('/booking', { params: { firstname, lastname } }); // another way to pass query parameter
