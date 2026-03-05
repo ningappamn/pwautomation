@@ -17,7 +17,7 @@ import { faker } from '@faker-js/faker';
 import { DateTime } from 'luxon';
 
 
-test.only('Create new booking with POST request and generate dynamic request body using faker library', async ({ request }) => {
+test('Create new booking with POST request and generate dynamic request body using faker library', async ({ request }) => {
   
   //generate dynamic request body using faker library
   const requestBody = {
