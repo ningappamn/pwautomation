@@ -1,0 +1,142 @@
+API Testing 
+-----------------
+GET  - To get the record details 
+POST - To Post the information or create record
+DELETE - delete record
+PUT(UPDATE) - update record
+PATCH (Partial Update)- Partially update the record
+
+
+End point url 
+Path Parameter 
+----------------
+- we used when we want to identify or fetch specific resource or record
+
+ we append in url
+ we use this when value is mandetory 
+ Example : https://api.example.com/users/101
+ here path parameter is 101
+
+
+ Query Prameter 
+ ---------------
+ query parameter is used to filter, sort or modify the result 
+
+ it apears after ? in url 
+
+ Example : https://api.example.com/users?age=25
+
+ here in above example age=25 is a Query Parameter
+
+ Multiple Query Parameters:
+ ----------------------------
+ Example : https://api.example.com/users?age=25&city=Bangalore
+
+
+Difference between PUT(Update) and PATCH(Partail Update)
+----------------------------------------------------------
+PUT (Full Update) - Replace or updte the entire resource or record and if any fields are missed 
+               that will update as null or default 
+
+PUT /users/101
+Content-Type: application/json
+
+{
+  "name": "Ajith",
+  "email": "ajith@example.com",
+  "age": 30
+}
+
+
+PATCH(Partail Update) - replace or update only specified fields rest remain as it is 
+
+PATCH /users/101
+Content-Type: application/json
+
+{
+  "age": 31
+}
+
+End Point 
+--------------
+After the domain name is End Point 
+
+Example : https://api.example.com/users
+
+from the above example after domain api.example.com/
+users is a End Point 
+
+
+Status Code's
+------------------
+GET(Retrive Data)
+---------------------
+200 - OK - Request success and contains request data 
+204 - No Content - Request success but request data don't have content 
+
+404 - Not Found - Resource does not exist 
+401 - Unauthorized Access - Invalid key or access token (You are not logged in or didn’t provide the correct credentials.)
+403 - Forbidon - Access not allowed.(dont have permission to access resource) - You are logged in, but you don’t have permission to access this resource.
+
+401 = “You need to log in”
+403 = “You are logged in, but not allowed”
+
+
+POST(Create new record or resource)
+-------------------------------------
+201 - CREATED - Record or resource created successfully 
+400 - BAD Request - Invalid Data - Missing Data
+
+409 - Conflict - data/resource already exist 
+401 - Unauthorized access - Not logged in 
+403 - Forbiden - Logged in but dont have access
+
+
+PUT (Update or Replace the entire resource)
+--------------------------------------------
+200 - OK - Resource successfully updated
+204 - NO CONTENT - Resource successfully updated, no response body.
+400 - BAD Request - Invalid or Missing Data
+
+404 - NOT FOUND - Resource does noit exist
+
+
+PATCH (Partial Update)
+------------------------
+
+200 - OK - Resource successfully updated
+204 - NO CONTENT - Resource successfully updated, no response body.
+400 - BAD Request - Invalid or Missing Data
+
+404 - NOT FOUND - Resource does noit exist
+
+
+DELETE (DELETE Record)
+----------------------
+201 - Created - Resource successfully updated
+204 - NO CONTENT - Resource successfully updated, no response body.
+400 - BAD Request - Invalid or Missing Data
+
+404 - NOT FOUND - Resource does noit exist
+
+401 - Unauthorized access - Not logged in 
+403 - Forbiden - Logged in but dont have access
+
+
+Creating Request body for Post Request in automation
+----------------------------------------------------
+1. Create using static json (hardcoded payload)
+2. Create using json file 
+3. Create using faker library - randomlly generate data
+4. Create using environmental variable 
+5. Using factory or build pattern 
+
+
+Dynamically generated using faker library
+-------------------------------------------
+Run Command in Terminal - npm install @faker-js/faker 
+
+Generate using the Luxon library matches the expected API format
+------------------------------------------------------------------
+Command - npm install luxon
+
