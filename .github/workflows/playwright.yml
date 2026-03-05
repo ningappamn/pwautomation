@@ -11,13 +11,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
       - name: Install dependencies
         run: npm install
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests (line reporter)
+      - name: Run Playwright tests
         env:
-          CI: true   # mark as CI (Playwright reads this)
+          CI: true
         run: npx playwright test --reporter=line
