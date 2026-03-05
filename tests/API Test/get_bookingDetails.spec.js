@@ -32,7 +32,7 @@ test('Get booking details using path parameter', async ({ request }) => {
 
 });
 
-test.only('Get booking details using query parameter', async ({ request }) => {
+test('Get booking details using query parameter', async ({ request }) => {
 
     //get booking details using query parameter (firstname and lastname) 
 
