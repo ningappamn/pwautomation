@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-import { BookingAPI } from "../../Programs/bookingAPI";     
+import { BookingAPI } from "../../Programs/bookingAPI";
 
 test('create and update booking', async ({ request }) => {
 
@@ -78,19 +78,19 @@ test('create and update booking', async ({ request }) => {
     expect(partialUpdateResponse.status()).toBe(200);
 
     const partialUpdateResponseBody = await partialUpdateResponse.json();
-    console.log("Partially Updated Booking:", partialUpdateResponseBody);  
-    
+    console.log("Partially Updated Booking:", partialUpdateResponseBody);
+
     //delete booking
     const deleteResponse = await bookingAPI.deleteBooking(bookingId, token);
 
     expect(deleteResponse.ok()).toBeTruthy();
-    expect(deleteResponse.status()).toBe(201);  
+    expect(deleteResponse.status()).toBe(201);
 
     //get booking by id after deletion
     const getResponse = await bookingAPI.getBookingById(bookingId);
 
     expect(getResponse.ok()).toBeFalsy();
-    expect(getResponse.status()).toBe(404); 
+    expect(getResponse.status()).toBe(404);
 
     //get all bookings
     const getAllResponse = await bookingAPI.getAllBookings();
@@ -99,5 +99,5 @@ test('create and update booking', async ({ request }) => {
     expect(getAllResponse.status()).toBe(200);
 
     const getAllResponseBody = await getAllResponse.json();
-    console.log("All Bookings:", getAllResponseBody);   
+    console.log("All Bookings:", getAllResponseBody);
 });
