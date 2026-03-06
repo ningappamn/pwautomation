@@ -65,4 +65,18 @@ test('create and update booking', async ({ request }) => {
 
     const updateResponseBody = await updateResponse.json();
     console.log("Updated Booking:", updateResponseBody);
+
+    //partial update booking
+    const partialUpdateBody = {
+        firstname: "mahadev",
+        lastname: "B"
+    };
+
+    const partialUpdateResponse = await bookingAPI.partialUpdateBooking(bookingId, token, partialUpdateBody);
+
+    expect(partialUpdateResponse.ok()).toBeTruthy();
+    expect(partialUpdateResponse.status()).toBe(200);
+
+    const partialUpdateResponseBody = await partialUpdateResponse.json();
+    console.log("Partially Updated Booking:", partialUpdateResponseBody);           
 });

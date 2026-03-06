@@ -31,4 +31,15 @@ export class BookingAPI {
         });
         return response;
     }
+
+    //partial update booking
+    async partialUpdateBooking(bookingId, token, updateBody) {
+        const response = await this.request.patch(`${this.baseURL}/booking/${bookingId}`, {
+            headers: {
+                'cookie': `token=${token}`
+            },
+            data: updateBody
+        });
+        return response;
+    }
 }
