@@ -18,7 +18,7 @@ function readJsonFile(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }
 
-test.only('update booking with data from JSON file', async ({ request }) => {
+test('update booking with data from JSON file', async ({ request }) => {
 
   //read the request body from the JSON file and parse it as JSON
   const requestBody = readJsonFile('Testdata/Post_Request_Body.json');
