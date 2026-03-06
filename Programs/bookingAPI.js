@@ -42,4 +42,26 @@ export class BookingAPI {
         });
         return response;
     }
+
+    //delete booking
+    async deleteBooking(bookingId, token) {
+        const response = await this.request.delete(`${this.baseURL}/booking/${bookingId}`, {
+            headers: {
+                'cookie': `token=${token}`
+            }
+        });
+        return response;
+    }
+
+    //get booking by id
+    async getBookingById(bookingId) {
+        const response = await this.request.get(`${this.baseURL}/booking/${bookingId}`);
+        return response;
+    }
+
+    //get all bookings
+    async getAllBookings() {
+        const response = await this.request.get(`${this.baseURL}/booking`);
+        return response;
+    }
 }
