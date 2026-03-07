@@ -140,3 +140,61 @@ Generate using the Luxon library matches the expected API format
 ------------------------------------------------------------------
 Command - npm install luxon
 
+
+Header
+-------
+Header: is an HTTP request option
+It allows you to send extra information to the server
+
+Ex: for basic auth requires user name and password we use header top send this
+
+authorization
+--------------
+This is the header name. 
+Used for authentication methods like
+
+Basic Auth
+Bearer Token
+OAuth
+API Keys
+
+Example : Authorization: Basic xxxxx
+Authorization: Bearer eyJhbGci...
+Authorization: ApiKey 123456
+
+Buffer
+-----------------
+Buffer is a Node.js class.
+Used for:
+
+Binary data
+Encoding
+Decoding
+File operations
+
+Buffer.from("hello")
+
+Buffer.from()
+-------------------
+This converts the string into binary data.
+
+.toString('base64')
+----------------------
+.toString('base64')
+This converts the buffer into Base64 encoding.
+
+Base64 is used because HTTP headers must contain safe characters.
+
+Example Encoding :
+admin:password123
+
+Base64 result:
+YWRtaW46cGFzc3dvcmQxMjM=
+
+Example in Playwright API Test
+---------------------------------
+const response = await request.get('/api/booking', {
+  headers: {
+    authorization: `Basic ${Buffer.from('write user name:write pass').toString('base64')}`
+  }
+});
