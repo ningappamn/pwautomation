@@ -192,9 +192,24 @@ Base64 result:
 YWRtaW46cGFzc3dvcmQxMjM=
 
 Example in Playwright API Test
----------------------------------
+------------------------------
+
+Basic auth with user name and pass (Path Param)
+-----------------------------------------------
 const response = await request.get('/api/booking', {
   headers: {
     authorization: `Basic ${Buffer.from('write user name:write pass').toString('base64')}`
   }
 });
+
+Bearer token (Path Param)
+--------------------------
+const bearertoken='add bearer token hear';
+const response=await request.get('url',heders:{
+  `authorization:bearer ${bearertoken}`
+
+})
+
+API KEY (Query Param)
+---------------------
+
