@@ -1,0 +1,7 @@
+All the products: Sauce Labs Backpack,Sauce Labs Bike Light,Sauce Labs Bolt T-Shirt,Sauce Labs Fleece Jacket,Sauce Labs Onesie,Test.allTheThings() T-Shirt (Red)
+Checking Product: Sauce Labs Backpack
+Checking Product: Sauce Labs Bike Light
+Checking Product: Sauce Labs Bolt T-Shirt
+Checking Product: Sauce Labs Fleece Jacket
+Checking Product: Sauce Labs Onesie
+Added Product is: Sauce Labs Onesie
