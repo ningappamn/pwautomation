@@ -9,7 +9,7 @@
     Ans : Playwright is faster compared to Selenium in performance. It has built-in auto-waiting, whereas in Selenium you need to add waits manually. Playwright also provides advanced debugging features, supports executing multiple tests in parallel, has native cross-browser support, and offers API mocking capabilities.
 
  3. Can we run the same test in parallel on different workers?
-    Ans : No, we cannot run the same test file in parallel across different workers. However, Playwright can run multiple different tests in parallel on separate workers. Splitting a single test file to run the same test in different workers is not possible.
+    Ans : No, we cannot run the same test file in parallel across different workers at a time. However, Playwright can run multiple different tests in parallel on separate workers. Splitting a single test file to run the same test in different workers is not possible.
 
  4. How do you install Playwright?
     Ans: Download and install Node.js from the official website (https://nodejs.org/).
@@ -564,5 +564,40 @@ Example : Selector = Address
     In this example, 'host-element' is the selector for the element that contains the shadow DOM, and 'shadow-element' is the selector for the element within the shadow DOM that I want to interact with. By using the >> operator, I can access and interact with elements inside the shadow DOM seamlessly.    
     
 
-*/      
+automation interview questions
 
+1. Handling file upload 
+2. Handling file download 
+3. handling iframes
+4. implementing custom fixures
+5. debuging
+6.Handling popup.alerts,confirm and promt and tabs and windows and multiple tabs and windows and stattic and dynamic dropdown/ suggested dropdown
+7. what is sync and async in playwright and how to handle it?
+8. why we use await in playwright and how to handle it?
+9. what is textcontent and all textContent, allTextContent and innertext and allInnerText in playwright and how to handle it?
+10. 16.Test annotations ,tags and grouping,hooks
+
+11. Handling different environment
+12. Handling multiple browser context and tabs 
+13. Handling API Testing
+14. Handling 2 factor authentication and Authentication 
+15. Handling Different authenictiations in API Testing 
+
+
+16.Handling dynamic content and Shadow DOM
+17.Handling Test Data in playwright 
+18.Handling Reports  
+19.Configuartions
+
+
+
+20.Handle flenkey test, retry and timeouts
+21.Handle cross browser testing 
+22.video and screenshots
+23.Handling regressin,smoke,sanity and e2e testing
+
+
+24.Handling different waits and events 
+25.Handling network intercption and mocking 
+26. Handling viewport and mobile testing
+*/      
