@@ -11,9 +11,10 @@ Json body:json body is stored in a separate file (Testdata/Put_Request_Body.json
 import { test, expect } from "@playwright/test";
 import fs from 'fs';
 
-import { json } from "stream/consumers";
-
-
+/**
+ * @param {string} filePath
+ * @returns {any}
+ */
 function readJsonFile(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }

@@ -9,7 +9,7 @@ const ENV = process.env.TARGET_ENV || 'dev';
 
 //build file path 
 //path.resolve() convert relative path to absolute path
-const envPath = path.resolve(process.cwd(), `config/${ENV}.env`);
+const envPath = path.resolve(process.cwd(), `config/${ENV}.env`); //cwd = current working directory
 
 //load env file 
 dotenv.config({ path: envPath });
