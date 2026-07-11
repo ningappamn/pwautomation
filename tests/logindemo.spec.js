@@ -12,8 +12,6 @@ test('login with env file', async ({ page }) => {
   await page.fill('#password', env.PASSWORD);
   await page.click('#login-button');
 
-  console.log(env.USERNAME);
-  console.log(env.PASSWORD);
 
   //validate login success
   
